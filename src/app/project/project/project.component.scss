@@ -1,0 +1,49 @@
+@use '../../constants.scss';
+h3,p{
+    font-weight: bold;
+    color:constants.$link-hover-color;
+    text-align: center;
+}
+.project-container{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2%;
+    justify-content: space-around;
+    .project{
+        width: 25%;
+        padding: 2%;
+
+        h4,p{
+            color: constants.$link-hover-color;
+        }
+        h3{
+            font-weight: bold;
+            color:#2dd4bf;
+        }
+        ul{
+            display: flex;
+            
+            flex-wrap: wrap;
+            li{
+                list-style: none;
+                margin-left: 5px;
+            }
+            div{
+                color:#2dd4bf;
+                line-height: 1.75rem;
+                padding: .25rem .75rem;
+                background-color: #2dd4bf21 ;
+                border-radius: 25px;
+                margin:4px;
+    
+            }
+        }
+    }
+
+    .project:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        background: #2dd4bf21 ;
+        border-radius: 25px;
+      }
+}

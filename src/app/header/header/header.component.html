@@ -1,0 +1,20 @@
+<section class="navigation">
+  <div class="nav-container">
+    <div class="brand">
+      <img src="../../../assets/logo1.jpg" alt="logo" class="logo" />
+      <a href="#about">Saraswathi Jagadeesan</a>
+    </div>
+    <nav>
+      <div class="nav-mobile">
+        <a id="nav-toggle" (click)="navToggle()"><span></span></a>
+      </div>
+      <ul class="nav-list" [ngClass]="{ active: isMobileMenuOpen }">
+        <li><a href="#about">ABOUT</a></li>
+        <li><a href="#experience">EXPERIENCE</a></li>
+        <li><a href="#project">PROJECT</a></li>
+        <li><a href="#resume">RESUME</a></li>
+        <li><a href="#contact">CONTACT</a></li>
+      </ul>
+    </nav>
+  </div>
+</section>
