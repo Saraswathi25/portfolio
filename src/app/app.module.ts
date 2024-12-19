@@ -10,13 +10,17 @@ import { CommonModule } from '@angular/common';
 import { AboutModule } from './about/about.module';
 import { ExperienceModule } from './experience/experience.module';
 import { ProjectComponent } from './project/project/project.component';
+import { ResumeComponent } from './resume/resume/resume.component';
+import { ContactComponent } from './contact/contact/contact.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    ProjectComponent
+    ProjectComponent,
+    ResumeComponent,
+    ContactComponent,
   ],
   imports: [
     BrowserModule,
@@ -24,9 +28,9 @@ import { ProjectComponent } from './project/project/project.component';
     CommonModule,
     BrowserAnimationsModule,
     AboutModule,
-    ExperienceModule
+    ExperienceModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
