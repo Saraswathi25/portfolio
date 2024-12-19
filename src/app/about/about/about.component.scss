@@ -1,54 +1,86 @@
 @use '../../constants.scss';
-.about-container{
-    display: flex;
-    justify-content: center; 
-    align-items: center; 
-}
-.image-container{
-    img{
-        width: 600px;
-        height: auto;
-    }
-}
-.description{
-    padding: 8%;
-    text-align: center;
-    h1{    
-        color: constants.$link-hover-color;
-        animation-name: fade-in-down;
-        animation-fill-mode: both;
-        animation-duration: 1s;
-    }
-    p{
-        color: constants.$link-hover-color;
-        animation-name: fade-in-up;
-        animation-fill-mode: both;
-        animation-duration: 1s; 
-    }
-    $animationDelay: 1s;
 
-
-@keyframes fade-in-down {
-  0% { opacity: 0; transform: translate3d(0, -100%, 0);}
-  100% { opacity: 1;transform: none }
-}
-@keyframes fade-in-up {
-    0% { opacity: 0; transform: translate3d(0, 100%, 0);}
-    100% { opacity: 1;transform: none }
-  }
+.about-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 100vh;
 }
 
-
-
-@media only screen and (max-width: constants.$breakpoint-tab) {
-   .about-container{
-    display: block;
-   }
-   .image-container{
-    img{
-        width: 400px;
-    }
-   }
-  }
+.image-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
   
 
+  img {
+    width: 350px;
+    height: 350px;
+    border-radius: 50%; 
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  
+    object-fit: cover;
+    background: #9999;
+    transform: perspective(1000px) translate(0, 0) rotateX(0) rotateY(0);
+  transition: transform 0.2s ease-out;
+
+
+  }
+}
+
+.description {
+  padding: 8%;
+ 
+  flex: 1;
+
+  h1 {
+    color: #2dd4bf;
+    font-size: 28px;
+    font-weight: 500;
+    animation-name: fade-in-down;
+    animation-fill-mode: both;
+    animation-duration: 1s;
+  }
+
+  p {
+    color: constants.$link-hover-color;
+    animation-name: fade-in-up;
+    animation-fill-mode: both;
+    animation-duration: 1s;
+  }
+}
+
+@keyframes fade-in-down {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, -100%, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media only screen and (max-width: constants.$breakpoint-tab) {
+  .about-container {
+    display: block;
+  }
+  .image-container img {
+    width: 250px;
+    height: 250px;
+  }
+}

@@ -10,12 +10,10 @@ h3,p{
     padding: 2%;
     justify-content: space-around;
     .project{
-        width: 25%;
-        padding: 2%;
+        width: 20%;
+        padding: 3%;
 
-        h4,p{
-            color: constants.$link-hover-color;
-        }
+       
         h3{
             font-weight: bold;
             color:#2dd4bf;
@@ -40,10 +38,65 @@ h3,p{
         }
     }
 
-    .project:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-        background: #2dd4bf21 ;
-        border-radius: 25px;
-      }
+    // .project:hover {
+    //     transform: translateY(-5px);
+    //     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    //     background: #2dd4bf21 ;
+    //     border-radius: 25px;
+    //   }
+}
+.project {
+  position: relative;
+  width: 350px;
+  height: 350px;
+  overflow: hidden; /* Ensures content stays within the bounds of the image */
+}
+
+.image {
+  width: 100%;
+
+  object-fit: cover;
+  transition: opacity 0.3s;
+  border-radius: 12px;
+}
+
+.overlay {
+  position: absolute;
+  top: 0; /* Start the overlay from the top of the image */
+  left: 0;
+  width: 100%;
+  height: 100%; /* Cover the full image */
+  background-color: rgba(0, 0, 0, 0.8); /* Dark semi-transparent overlay */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center the content vertically */
+  align-items: center; /* Center the content horizontally */
+  opacity: 0; /* Hide the overlay initially */
+  transition: opacity 0.3s ease; /* Smoothly fade in the overlay */
+}
+
+.project:hover .overlay {
+  opacity: 1; /* Show the overlay on hover */
+}
+
+.description {
+  color: white;
+  font-size: 1.1rem;
+  text-align: center;
+  margin-bottom: 16px;
+  padding: 0 8px; /* Add some padding for better readability */
+}
+
+.btn-visit {
+  background-color: #21897c;
+  color: white;
+  padding: 8px 16px;
+  text-decoration: none;
+  border-radius: 4px;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.btn-visit:hover {
+  background-color: #3b82f6; /* Darker blue on hover */
 }
