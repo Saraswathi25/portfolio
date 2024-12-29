@@ -1,8 +1,10 @@
 @use '../../constants.scss';
+@use '../../animations';
+@use '../../circle-container.scss';
 
 .about-container {
   display: flex;
-  justify-content: center;
+  justify-content: space-between; 
   align-items: center;
   position: relative;
   height: 100vh;
@@ -12,32 +14,25 @@
   flex: 1;
   display: flex;
   justify-content: center;
-  align-items: center;
   position: relative;
-  
+  padding: 12%;
+  margin-right: 20px; 
 
   img {
     width: 350px;
     height: 350px;
     border-radius: 50%; 
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-  
     object-fit: cover;
-    background: #9999;
-    transform: perspective(1000px) translate(0, 0) rotateX(0) rotateY(0);
-  transition: transform 0.2s ease-out;
-
-
+    transition: transform 0.2s ease-out;
   }
 }
 
 .description {
-  padding: 8%;
- 
+  padding: 8% 0 0 20%;
   flex: 1;
 
   h1 {
-    color: #2dd4bf;
+    color: constants.$primary-color;
     font-size: 28px;
     font-weight: 500;
     animation-name: fade-in-down;
@@ -53,34 +48,38 @@
   }
 }
 
-@keyframes fade-in-down {
-  0% {
-    opacity: 0;
-    transform: translate3d(0, -100%, 0);
-  }
-  100% {
-    opacity: 1;
-    transform: none;
-  }
-}
-
-@keyframes fade-in-up {
-  0% {
-    opacity: 0;
-    transform: translate3d(0, 100%, 0);
-  }
-  100% {
-    opacity: 1;
-    transform: none;
-  }
+.download-button {
+  padding: 10px 20px;
+  background: constants.$nav-background;
+  color: constants.$primary-color;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  border: 1px solid constants.$primary-color;
+  margin-top: 16px; 
 }
 
 @media only screen and (max-width: constants.$breakpoint-tab) {
   .about-container {
-    display: block;
+    flex-direction: column;
+    padding: 5%;
+    height:50vh;
   }
-  .image-container img {
-    width: 250px;
-    height: 250px;
+  .image-container {
+    flex-direction: column;
+    align-items: center;
+  
+  img {
+    width: 150px;
+    height: 150px;
+  
+  }
+  .description{
+    padding: 0;
+    text-align: center;
   }
 }
+}
+
+

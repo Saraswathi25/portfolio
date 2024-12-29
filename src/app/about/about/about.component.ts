@@ -8,7 +8,7 @@ import { trigger, transition, style, animate } from '@angular/animations';
 })
 export class AboutComponent implements OnInit {
   constructor() {}
-
+  particles = Array.from({ length: 100 });
   ngOnInit(): void {}
   onMouseMove(event: MouseEvent): void {
     const imgElement = event.target as HTMLImageElement;
@@ -29,5 +29,13 @@ export class AboutComponent implements OnInit {
     if (imgElement) {
       imgElement.style.transform = 'translate(0, 0) scale(1)';
     }
+  }
+  download() {
+    const pdfPath = '../../../assets/Saraswathi_Jagadeesan.pdf';
+    const link = document.createElement('a');
+    link.href = pdfPath;
+    link.download = 'Saraswathi_Jagadeesan.pdf';
+    link.target = '_blank';
+    link.click();
   }
 }

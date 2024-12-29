@@ -100,3 +100,14 @@ h3,p{
 .btn-visit:hover {
   background-color: #3b82f6; /* Darker blue on hover */
 }
+
+@media only screen and (max-width: constants.$breakpoint-tab) {
+  .project-container {
+   
+   .project{
+    width:70%;
+    height: auto;
+   }
+  }
+ 
+}

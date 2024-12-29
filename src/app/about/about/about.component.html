@@ -1,3 +1,6 @@
+<div *ngFor="let particle of particles" class="circle-container">
+  <div class="circle"></div>
+</div>
 <div class="about-container">
   <div class="image-container">
     <img
@@ -6,9 +9,11 @@
       (mousemove)="onMouseMove($event)"
       (mouseleave)="onMouseLeave()"
     />
-  </div>
-  <div class="description">
-    <h1 class="title">HI, I'M SARASWATHI JAGADEESAN</h1>
-    <p>Frontend Developer</p>
+
+    <div class="description">
+      <h1 class="title">HI, I'M SARASWATHI JAGADEESAN</h1>
+      <p>Frontend Developer</p>
+      <button class="download-button" (click)="download()">Resume</button>
+    </div>
   </div>
 </div>
