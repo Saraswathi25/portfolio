@@ -1,0 +1,67 @@
+@use '../../constants.scss';
+h2,
+p {
+  font-weight: bold;
+  color: constants.$link-hover-color;
+  text-align: center;
+}
+
+.imgsGrid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr); /* Creates 7 equal columns */
+  gap: 20px; /* Space between icons */
+  
+  margin: 0 auto;
+  width: 80%; /* Optional: Adjust the width as needed */
+  position: relative;
+}
+
+.skill-icon {
+  background-color:   white; /* White background for each skill */
+  padding: 10px; /* Space around the icon */
+  border-radius: 8px; /* Optional: Rounded corners for aesthetics */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Light shadow for a floating effect */
+  display: inline-block;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-icon img {
+  height: 80px; /* Set a fixed height for uniformity */
+  width: 80px; /* Set a fixed width for uniformity */
+  display: block;
+  margin: 0 auto;
+}
+
+/* Hover Effects */
+.skill-icon:hover {
+  transform: scale(1.1); /* Slight enlargement on hover */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* More shadow on hover */
+}
+
+.skills {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 20px auto;
+  text-align: center;
+ 
+  height: 100vh;
+}
+
+.skills h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: constants.$link-hover-color;
+}
+
+@media (max-width: 768px) {
+  .imgsGrid {
+    grid-template-columns: repeat(3, 1fr); /* Use 3 columns for smaller screens */
+  }
+
+  .skill-icon img {
+    height: 60px;
+    width: 60px; /* Reduce size on smaller screens */
+  }
+}

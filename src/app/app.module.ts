@@ -10,8 +10,8 @@ import { CommonModule } from '@angular/common';
 import { AboutModule } from './about/about.module';
 import { ExperienceModule } from './experience/experience.module';
 import { ProjectComponent } from './project/project/project.component';
-import { ResumeComponent } from './resume/resume/resume.component';
 import { ContactComponent } from './contact/contact/contact.component';
+import { SkillsComponent } from './skills/skills/skills.component';
 
 @NgModule({
   declarations: [
@@ -19,8 +19,8 @@ import { ContactComponent } from './contact/contact/contact.component';
     HeaderComponent,
     FooterComponent,
     ProjectComponent,
-    ResumeComponent,
     ContactComponent,
+    SkillsComponent,
   ],
   imports: [
     BrowserModule,
